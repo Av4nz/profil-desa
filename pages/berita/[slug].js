@@ -20,7 +20,10 @@ export async function getStaticProps({ params }) {
   const processedContent = await remark().use(html).process(content);
   return {
     props: {
-      frontmatter: data,
+      frontmatter: {
+        ...frontmatter,
+        date: new Date(frontmatter.date).toISOString(),
+      },
       content: processedContent.toString(),
     },
   };
