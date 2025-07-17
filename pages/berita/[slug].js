@@ -21,8 +21,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       frontmatter: {
-        ...frontmatter,
-        date: new Date(frontmatter.date).toISOString(),
+        ...data,
+        date: new Date(data.date).toISOString(),
       },
       content: processedContent.toString(),
     },
