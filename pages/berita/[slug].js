@@ -6,7 +6,7 @@ import html from "remark-html";
 import Image from "next/image";
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync("centent/berita");
+  const files = fs.readdirSync("content/berita");
   const paths = files.map((filename) => ({
     params: { slug: filename.replace(".md", "") },
   }));
